@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+</head>
+
+<body>
+
+<main class="app" id="app">
+    <div class="inputs">
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+        <input type="text" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');"/>
+    </div>
+
+    <div class="buttons">
+        <button id="submit-button" disabled="disabled">
+            <span class="material-symbols-outlined">
+                done
+            </span>
+        </button>
+        <button id="reset-button">
+            <span class="material-symbols-outlined">
+                restart_alt
+            </span>
+        </button>
+    </div>
+
+</main>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
