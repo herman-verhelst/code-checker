@@ -23,7 +23,7 @@ function handleInput(e: any): void {
     if (input.nextElementSibling && input.value) {
         input.nextElementSibling.focus();
     } else if (input.value) {
-        handleSubmit()
+        submitButton.focus();
     }
 }
 
