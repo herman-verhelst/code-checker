@@ -91,6 +91,11 @@ body {
   background-color: #DFD3CA;
 }
 
+.body--success {
+  background-color: rgba(200, 206, 202, 1);
+
+}
+
 .app {
   display: flex;
   flex-direction: column;
@@ -125,7 +130,8 @@ body {
   border-radius: 100%;
   z-index: -1;
   opacity: 50%;
-  animation: move ease-in-out infinite 5s;
+  transition: 2s background ease-in-out;
+  //animation: move ease-in-out infinite 5s;
 
   &:after {
     content: '';
@@ -140,6 +146,14 @@ body {
     background: radial-gradient(112% 112% at 4.87% 9.39%, rgba(203, 79, 79, 0.9) 0%, rgba(249, 133, 25, 0.3) 75.24%);
     mask-image: url('../assets/noise.png');
     -webkit-mask-image: url('../assets/noise.png');
+  }
+
+  &--success {
+    background: radial-gradient(112% 112% at 4.87% 9.39%, rgba(27, 113, 72, 0.9) 0%, rgba(45, 121, 112, 0.3) 75.24%);
+
+    &:after {
+      background: radial-gradient(112% 112% at 4.87% 9.39%, rgba(27, 113, 72, 0.9) 0%, rgba(45, 121, 112, 0.3) 75.24%);
+    }
   }
 
   &:nth-child(2) {

@@ -2,8 +2,10 @@ import './style.scss'
 
 const app: HTMLElement = document.getElementById('app') as HTMLElement;
 const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.inputs input') as NodeListOf<HTMLInputElement>;
+const shapes: NodeListOf<HTMLDivElement> = document.querySelectorAll('.shape') as NodeListOf<HTMLDivElement>;
 const resetButton: HTMLButtonElement = document.getElementById('reset-button') as HTMLButtonElement;
 const submitButton: HTMLButtonElement = document.getElementById('submit-button') as HTMLButtonElement;
+const body: HTMLBodyElement = document.getElementById('body')
 
 inputs[0].focus();
 checkEnabled()
@@ -61,6 +63,11 @@ function handleSubmit(): void {
 
         let audio: HTMLAudioElement = new Audio('../assets/error.wav');
         audio.play();
+    } else {
+        inputs.forEach(input => input.classList.add('input--success'));
+        shapes.forEach(shape => shape.classList.add('shape--success'));
+        body.classList.add('body--success');
+        // https://keithjgrant.com/posts/2017/07/transitioning-gradients/
     }
 }
 
