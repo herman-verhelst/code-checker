@@ -32,9 +32,9 @@ input, button {
   font-size: 2rem;
   text-align: center;
   border-radius: .5rem;
-  border: solid;
   color: #484848;
   transition: all .2s ease-out;
+  border: solid transparent;
 
   &:focus-visible {
     outline: none;
@@ -43,50 +43,44 @@ input, button {
 }
 
 input {
-  background-color: #e0e0e0;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.3);
   border-color: transparent;
 
   &:hover {
-    background-color: #d0d0d0;
+    background: rgba(255, 255, 255, 0.5);
   }
 }
 
 button {
   cursor: pointer;
   font-size: 2rem;
-  background-color: transparent;
-  border-color: #a9a9a9;
-  color: #a9a9a9;
-
-  &:hover {
-    border-color: #808080;
-    color: #808080;
-  }
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.3);
 
   &:focus-visible {
-    color: #4b4b4b;
+    color: #1e1e1e;
   }
 }
 
 #submit-button {
-  background-color: #bd4d4d;
-  border-color: #bd4d4d;
+  backdrop-filter: blur(10px);
+  background-color: rgba(189, 77, 77, 0.4);
   color: white;
 
   &:hover {
-    border-color: #8c2d2d;
-    background-color: #8c2d2d;
+    background-color: rgba(140, 45, 45, .6);
   }
 
   &:focus-visible {
-    border-color: #691f1f;
-    background-color: #691f1f;
+    background-color: rgba(105, 31, 31, 0.8);
+    border-color: transparent;
+
   }
 
   &:disabled {
     cursor: not-allowed;
-    background-color: #bdbdbd;
-    border-color: #bdbdbd;
+    background-color: rgba(189, 189, 189, 0.6);
   }
 }
 
