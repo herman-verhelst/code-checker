@@ -1,0 +1,121 @@
+.blob {
+  position: absolute;
+  width: 66%;
+  left: 10%;
+  top: 5%;
+  fill: #9f9f9f;
+  filter: blur(125px);
+  transition: .2s ease-out fill;
+
+  &:first-of-type {
+    animation: move-blob-1 infinite 30s ease-in-out;
+  }
+
+  &:nth-of-type(2) {
+    fill: #bdbdbd;
+    left: 40%;
+    top: 20%;
+    transform: rotate(60deg) scale(.8);
+    animation: move-blob-2 infinite 30s ease-in-out;
+  }
+
+  &:nth-of-type(3) {
+    fill: #868686;
+    left: 20%;
+    top: 40%;
+    transform: rotate(120deg) scale(1.2);
+    animation: move-blob-3 infinite 30s ease-in-out;
+  }
+
+  &--wrong {
+    fill: #EA8D8D;
+
+    &:nth-child(2) {
+      fill: #F1736B;
+    }
+
+    &:nth-child(3) {
+      fill: #ED7A61;
+    }
+  }
+
+  &--success {
+    fill: #58DCAC;
+
+    &:nth-child(2) {
+      fill: #23C176;
+    }
+
+    &:nth-child(3) {
+      fill: #23C176;
+    }
+  }
+}
+
+.background {
+  background-image: url('../../assets/noise.png');
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 10%;
+  //filter: brightness(.2) sepia(1) saturate(1000%);
+}
+
+@keyframes move-blob-1 {
+  from {
+    left: 10%;
+    top: 5%;
+  }
+  33% {
+    left: 5%;
+    top: 20%;
+  }
+  66% {
+    left: 10%;
+    top: 10%;
+  }
+  to {
+    left: 10%;
+    top: 5%;
+  }
+}
+
+@keyframes move-blob-2 {
+  from {
+    left: 40%;
+    top: 20%;
+  }
+  33% {
+    left: 10%;
+    top: 10%;
+  }
+  66% {
+    left: 0;
+    top: 30%;
+  }
+  to {
+    left: 40%;
+    top: 20%;
+  }
+}
+
+@keyframes move-blob-3 {
+  from {
+    left: 20%;
+    top: 40%;
+  }
+  33% {
+    left: 40%;
+    top: 10%;
+  }
+  66% {
+    left: 10%;
+    top: 30%;
+  }
+  to {
+    left: 20%;
+    top: 40%;
+  }
+}

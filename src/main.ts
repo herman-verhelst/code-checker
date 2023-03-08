@@ -1,4 +1,4 @@
-import './style.scss'
+import './styles/style.scss';
 
 const app: HTMLElement = document.getElementById('app') as HTMLElement;
 const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.inputs input') as NodeListOf<HTMLInputElement>;
@@ -59,7 +59,7 @@ function handleSubmit(): void {
         app.offsetWidth;
         app.classList.add('shake');
 
-        let audio: HTMLAudioElement = new Audio('../assets/error.wav');
+        let audio: HTMLAudioElement = new Audio('/error.mp3');
         audio.play();
     }
 }
