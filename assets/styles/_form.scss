@@ -1,10 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -15,15 +8,6 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-::-moz-selection {
-  color: #fafafa;
-  background: #484848;
-}
-
-::selection {
-  color: #fafafa;
-  background: #484848;
-}
 
 input, button {
   width: 4rem;
@@ -65,39 +49,25 @@ button {
 
 #submit-button {
   backdrop-filter: blur(10px);
-  background-color: rgba(189, 77, 77, 0.4);
-  color: white;
+  background-color: rgba(124, 124, 124, 0.4);
+  color: #efefef;
+
 
   &:hover {
-    background-color: rgba(140, 45, 45, .6);
+    background-color: rgba(94, 94, 94, 0.6);
   }
 
   &:focus-visible {
-    background-color: rgba(105, 31, 31, 0.8);
+    background-color: rgba(64, 64, 64, 0.8);
     border-color: transparent;
-
   }
 
   &:disabled {
     cursor: not-allowed;
     background-color: rgba(189, 189, 189, 0.6);
+    color: #cbcbcb;
+
   }
-}
-
-body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-color: #DFD3CA;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  gap: 2rem;
-  margin: auto;
 }
 
 .inputs, .buttons {
@@ -115,72 +85,8 @@ body {
   }
 }
 
-.shape {
-  position: fixed;
-  left: -10%;
-  top: -5%;
-  width: 50%;
-  aspect-ratio: 1;
-  background: radial-gradient(112% 112% at 4.87% 9.39%, rgba(203, 79, 79, 0.9) 0%, rgba(249, 133, 25, 0.3) 75.24%);
-  border-radius: 100%;
-  z-index: -1;
-  opacity: 50%;
-  //animation: move ease-in-out infinite 5s;
-
-  &:after {
-    content: '';
-    position: absolute;
-    display: block;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    border-radius: 100%;
-    z-index: -2;
-    background: radial-gradient(112% 112% at 4.87% 9.39%, rgba(203, 79, 79, 0.9) 0%, rgba(249, 133, 25, 0.3) 75.24%);
-    mask-image: url('../assets/noise.png');
-    -webkit-mask-image: url('../assets/noise.png');
-  }
-
-  &:nth-child(2) {
-    left: 60%;
-    top: 5%;
-    width: 35%;
-    transform: rotate(65deg);
-    animation-delay: -.5s;
-  }
-
-  &:nth-child(3) {
-    left: 40%;
-    top: 70%;
-    width: 60%;
-    transform: rotate(-80deg);
-    animation-delay: -1s;
-  }
-}
-
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0,
-  'wght' 900,
-  'GRAD' 0,
-  'opsz' 48
-}
-
 .shake {
   animation: shake .6s ease-in-out;
-}
-
-@keyframes move {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-
 }
 
 @keyframes shake {
