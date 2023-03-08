@@ -64,7 +64,8 @@ function handleSubmit(): void {
         app.classList.add('shake');
         blobs.forEach(shape => shape.classList.add('blob--wrong'));
 
-        let audio: HTMLAudioElement = new Audio('/error.mp3');
+        const audioUrl = new URL('../assets/error.mp3', import.meta.url).href
+        let audio: HTMLAudioElement = new Audio(audioUrl);
         audio.play();
     } else {
         inputs.forEach(input => input.classList.add('input--success'));
