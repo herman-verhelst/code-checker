@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #DAD4D4;
+  overflow: hidden;
+  transition: .2s background-color ease-in-out;
+}
+
+.body--success {
+  background-color: #D4DAD7;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  gap: 2rem;
+  margin: auto;
+}
+
+::-moz-selection {
+  color: #fafafa;
+  background: #484848;
+}
+
+::selection {
+  color: #fafafa;
+  background: #484848;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0,
+  'wght' 900,
+  'GRAD' 0,
+  'opsz' 48
+}

@@ -1,11 +1,11 @@
-import './style.scss'
+import '../assets/styles/style.scss'
 
 const app: HTMLElement = document.getElementById('app') as HTMLElement;
 const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll('.inputs input') as NodeListOf<HTMLInputElement>;
-const shapes: NodeListOf<HTMLDivElement> = document.querySelectorAll('.shape') as NodeListOf<HTMLDivElement>;
+const blobs: NodeListOf<HTMLDivElement> = document.querySelectorAll('.blob') as NodeListOf<HTMLDivElement>;
 const resetButton: HTMLButtonElement = document.getElementById('reset-button') as HTMLButtonElement;
 const submitButton: HTMLButtonElement = document.getElementById('submit-button') as HTMLButtonElement;
-const body: HTMLBodyElement = document.getElementById('body')
+const body: HTMLBodyElement = document.getElementById('body') as HTMLBodyElement;
 
 inputs[0].focus();
 checkEnabled()
@@ -55,19 +55,21 @@ function handleKeyPress(e: any): void {
 function handleSubmit(): void {
     let code: string = '';
     inputs.forEach(input => code += input.value);
+    blobs.forEach(shape => shape.classList.remove('blob--success', 'blob--wrong'));
+
     if (code.length !== inputs.length) throw new Error('Mismatch in code size...');
     if (code !== '123456') {
         app.classList.remove('shake');
         app.offsetWidth;
         app.classList.add('shake');
+        blobs.forEach(shape => shape.classList.add('blob--wrong'));
 
         let audio: HTMLAudioElement = new Audio('../assets/error.wav');
         audio.play();
     } else {
         inputs.forEach(input => input.classList.add('input--success'));
-        shapes.forEach(shape => shape.classList.add('shape--success'));
+        blobs.forEach(shape => shape.classList.add('blob--success'));
         body.classList.add('body--success');
-        // https://keithjgrant.com/posts/2017/07/transitioning-gradients/
     }
 }
 
@@ -75,6 +77,7 @@ function resetForm(): void {
     inputs.forEach(input => input.value = '');
     inputs[0].focus();
     checkEnabled();
+    blobs.forEach(shape => shape.classList.remove('blob--success', 'blob--wrong'));
 }
 
 inputs.forEach(input => input.addEventListener('paste', handlePaste));

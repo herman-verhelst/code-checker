@@ -1,0 +1,125 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+input, button {
+  width: 4rem;
+  min-width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: .5rem;
+  color: #484848;
+  transition: all .2s ease-out;
+  border: solid transparent;
+
+  &:focus-visible {
+    outline: none;
+    border-color: #9f9f9f;
+  }
+}
+
+input {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: transparent;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.3);
+
+  &:focus-visible {
+    color: #1e1e1e;
+  }
+}
+
+#submit-button {
+  backdrop-filter: blur(10px);
+  background-color: rgba(124, 124, 124, 0.4);
+  color: #efefef;
+
+
+  &:hover {
+    background-color: rgba(94, 94, 94, 0.6);
+  }
+
+  &:focus-visible {
+    background-color: rgba(64, 64, 64, 0.8);
+    border-color: transparent;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: rgba(189, 189, 189, 0.6);
+    color: #cbcbcb;
+
+  }
+}
+
+.inputs, .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.buttons {
+  width: 100%;
+
+  #submit-button {
+    width: 100%;
+  }
+}
+
+.shake {
+  animation: shake .6s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+  37% {
+    transform: translateX(5px);
+    timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(-5px);
+    timing-function: ease-in;
+  }
+  73% {
+    transform: translateX(4px);
+    timing-function: ease-out;
+  }
+  82% {
+    transform: translateX(-4px);
+    timing-function: ease-in;
+  }
+  91% {
+    transform: translateX(2px);
+    timing-function: ease-out;
+  }
+  96% {
+    transform: translateX(-2px);
+    timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0px);
+    timing-function: ease-in;
+  }
+}
